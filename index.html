@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Ислам & Сабина — 23.07.2026</title>
+  <meta name="description" content="Свадебное приглашение Ислама и Сабины — 23.07.2026">
+  <meta property="og:title" content="Ислам & Сабина">
+  <meta property="og:description" content="23.07.2026">
+  <meta property="og:image" content="images/og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress"><span id="progressBar"></span></div>
+  <button class="sound" id="soundBtn" aria-label="Музыка">♪</button>
+
+  <main class="stories">
+    <section class="story hero">
+      <img src="images/hero.jpg" alt="Ислам и Сабина">
+      <div class="shade"></div>
+      <div class="hero-text reveal">
+        <p class="kicker">Wedding invitation</p>
+        <h1>Ислам<br><span>&</span><br>Сабина</h1>
+        <p class="date">23 / 07 / 2026</p>
+      </div>
+      <div class="scroll-hint">Листайте вниз</div>
+    </section>
+
+    <section class="story split cream">
+      <div class="number">01</div>
+      <div class="content reveal">
+        <p class="kicker dark">Дорогие гости</p>
+        <h2>Мы приглашаем вас стать частью нашего особенного дня.</h2>
+        <p>Пусть этот вечер останется в памяти как история о любви, семье и красивом начале.</p>
+      </div>
+    </section>
+
+    <section class="story photo-card wine">
+      <img src="images/story-1.jpg" alt="Руки Ислама и Сабины">
+      <div class="caption reveal">
+        <p>Сохраните дату</p>
+        <h2>23 июля</h2>
+        <span>2026</span>
+      </div>
+    </section>
+
+    <section class="story countdown-page">
+      <div class="reveal">
+        <p class="kicker dark">До свадьбы осталось</p>
+        <div class="countdown" id="countdown">
+          <div><b id="days">0</b><span>дней</span></div>
+          <div><b id="hours">0</b><span>часов</span></div>
+          <div><b id="minutes">0</b><span>минут</span></div>
+          <div><b id="seconds">0</b><span>секунд</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story program">
+      <div class="reveal">
+        <p class="kicker">Program</p>
+        <h2>Программа дня</h2>
+        <div class="timeline">
+          <div><time>15:00</time><p>Сбор гостей</p></div>
+          <div><time>16:00</time><p>Начало праздничного банкета</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story editorial location">
+      <img src="images/story-2.jpg" alt="Ислам и Сабина">
+      <div class="mag reveal">
+        <h2>Место проведения</h2>
+        <p><b>Ресторан «Лесная Поляна»</b><br>г. Ставрополь</p>
+        <a class="map-link" href="https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F%20%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D0%B0%20%D0%A1%D1%82%D0%B0%D0%B2%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C" target="_blank" rel="noopener">Посмотреть на карте</a>
+      </div>
+    </section>
+
+    <section class="story split cream dress-code">
+      <div class="number">03</div>
+      <div class="content reveal">
+        <p class="kicker dark">Dress code</p>
+        <h2>Молочные и оливковые оттенки</h2>
+        <p>Будем рады, если вы поддержите цветовую гамму нашего праздника.</p>
+        <div class="dress-swatches">
+          <figure><img src="images/dress-cream.jpg" alt="Молочный оттенок"><figcaption>Молочный</figcaption></figure>
+          <figure><img src="images/dress-olive.jpg" alt="Оливковый оттенок"><figcaption>Оливковый</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="story rsvp">
+      <img class="rsvp-bg" src="images/story-3.jpg" alt="Ислам и Сабина">
+      <div class="rsvp-overlay"></div>
+      <div class="reveal rsvp-content">
+        <p class="script">С любовью</p>
+        <h2>Ислам<br>&<br>Сабина</h2>
+        <p>Пожалуйста, подтвердите присутствие до 20.07.2026</p>
+        <form id="rsvpForm" class="rsvp-form">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <div class="choice">
+            <label><input type="radio" name="attendance" value="Да, с удовольствием" required><span>Да, с удовольствием</span></label>
+            <label><input type="radio" name="attendance" value="К сожалению, не смогу"><span>К сожалению, не смогу</span></label>
+          </div>
+          <button type="submit">Подтвердить присутствие</button>
+          <p id="result"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <audio id="weddingMusic" src="music.mp3" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
