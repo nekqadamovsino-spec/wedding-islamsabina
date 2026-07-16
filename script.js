@@ -74,22 +74,56 @@ if (form) {
     btn.textContent = "Подтвердить";
   });
 }
-const soundBtn = document.getElementById("soundBtn");
-const music = document.getElementById("weddingMusic");
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
 
-if (soundBtn && music) {
-  soundBtn.onclick = async function () {
-    try {
-      if (music.paused) {
-        await music.play();
-        soundBtn.textContent = "Ⅱ";
-      } else {
-        music.pause();
-        soundBtn.textContent = "♪";
-      }
-    } catch (err) {
-      alert("Музыка не запустилась");
-      console.log(err);
-    }
-  };
+function updateMusicButton() {
+    if (!musicBtn) return;
+    musicBtn.innerHTML = music.paused ? "♪" : "❚❚";
 }
+
+function playMusic() {
+    if (!music) return;
+
+    music.play()
+        .then(() => {
+            updateMusicButton();
+        })
+        .catch(() => {
+            // Автозапуск заблокирован браузером
+        });
+}
+
+// Автозапуск после загрузки
+window.addEventListener("load", () => {
+    playMusic();
+});
+
+// Если браузер запретил — включится после первого касания
+["click", "touchstart", "pointerdown"].forEach(event => {
+    document.addEventListener(event, function firstTouch() {
+        playMusic();
+        document.removeEventListener(event, firstTouch);
+    }, { once: true });
+});
+
+// Кнопка музыка
+if (musicBtn) {
+    musicBtn.addEventListener("click", () => {
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+        updateMusicButton();
+    });
+}
+
+// Если музыка закончилась
+music.addEventListener("ended", updateMusicButton);
+
+// При запуске
+music.addEventListener("play", updateMusicButton);
+
+// При паузе
+music.addEventListener("pause", updateMusicButton);
